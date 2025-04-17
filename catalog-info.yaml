@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rhtap-go-app-27-gitops
+  description: This is GitOps manifest for rhtap-go-app-27   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=rhtap-go-app-27
+    backstage.io/kubernetes-id: rhtap-go-app-27 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: mvaldron-rhdh/rhtap-go-app-27-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: mvaldron-rhdh.rhtap-go-app-27-gitops
+spec:
+  type: gitops
+  owner: user:default/michael-valdron 
+  lifecycle: experimental
+  dependsOn:
+    - component:rhtap-go-app-27
